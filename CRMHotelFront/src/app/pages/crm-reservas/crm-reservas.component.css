@@ -1,0 +1,126 @@
+.reservas-container {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 200px;
+    border-radius: 8px;
+
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: var(--fuente-principal);
+    font-size: 70px;
+    font-weight: 500;
+
+}
+
+.filtro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: var(--fuente-secundaria);
+
+}
+
+.filtro label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.filtro input {
+    margin-right: 20px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filtro button {
+    all: unset;
+    cursor: pointer;
+    color: var(--color-primario);
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    font-weight: 800;
+}
+
+.filtro button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+    background-color: var(--color-primario);
+}
+
+.filtro button:hover::after {
+    width: 100%;
+}
+
+.reservas-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.reserva-card {
+
+    border: 1px solid var(--color-secundario);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.reserva-card h2 {
+    margin-top: 0;
+    font-family: var(--fuente-principal);
+    color: var(--color-primario);
+    font-weight: 00;
+
+}
+
+.reserva-card p {
+    margin: 5px 0;
+    color: #555;
+    font-family: var(--fuente-secundaria);
+}
+
+.reserva-card .input-con-icono {
+    margin-top: 5px;
+    width: 70%;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    background-image: url('/images/icono.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: transparent;
+    font-weight: 500;
+    color: black;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    font-family: var(--fuente-secundaria);
+}
+
+.reserva-card .input-con-icono:hover {
+    transform: translateX(7px);
+}
+
+span {
+    font-weight: 700;
+    color: var(--color-secundario);
+}

@@ -1,0 +1,33 @@
+<div class="logo">
+    <figure [routerLink]="['']">
+        <img src="/images/LOGO_EIRA_AI.png" alt="">
+    </figure>
+</div>
+<div>
+    <nav class="navbar">
+        <ul class="nav-home">
+            <li><a [routerLink]="['/habitaciones']">Nuestras habitaciones</a></li>
+            <li><a [routerLink]="['/spa']">Spa</a></li>
+            <li><a [routerLink]="['/nosotros']">Quiénes Somos</a></li>
+
+
+
+            @if (usuariosService.isAdmin()) {<li><a [routerLink]="['/dashboard']">Dashboard</a></li>}
+        </ul>
+
+        <ul class="login">
+            @if (usuariosService.islogged() && !usuariosService.isAdmin()) {
+            <li><a [routerLink]="['/misreservas']">Mis
+                    reservas</a></li>
+            }
+            @if(usuariosService.islogged()) {
+            <li><a [routerLink]="['/editusuario']">Editar Perfil</a></li>
+            <li><a (click)="onClickLogOut()">Logout</a></li>
+            }
+
+            @if (!usuariosService.islogged()) {
+            <li><a [routerLink]="['/registro']">Registro</a></li>
+            <li><a [routerLink]="['/login']">Login</a></li>}
+        </ul>
+    </nav>
+</div>

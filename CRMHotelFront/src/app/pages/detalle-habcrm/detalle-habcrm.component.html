@@ -1,0 +1,68 @@
+<div class="newhab">
+    @if(habitacion){
+    <div class="hab">
+        <h2>HABITACIÓN {{habitacion.puerta}}</h2>
+        <div class="fondo row">
+            @for (imagen of habitacion.imagenes; track $index) {
+
+            <figure>
+                <img [src]="'http://localhost:3000/'+imagen.ruta" alt="">
+                <button class="form-control delete" class="delete" (click)="deleteFoto(imagen.id)">X</button>
+            </figure>
+
+            }
+        </div>
+        <div class="contenido">
+            <div class="izq">
+                <p><span>Piso: </span> {{habitacion.piso}} </p>
+                <p><span>Habitación: </span>{{habitacion.num_camas}}, {{habitacion.categoria}}</p>
+                <p><span>Tamaño: </span> {{habitacion.tamanho}}</p>
+                <p> <span>Vista: </span>{{habitacion.vista}} </p>
+            </div>
+            <div class="dcha">
+                <h4>Servicios:</h4>
+                <p>Mascotas: {{habitacion.mascotas ? 'sí' : 'no'}}</p>
+                <p>Cocina: {{habitacion.cocina ? 'sí' : 'no'}}</p>
+
+            </div>
+            <p class="precio"><span>Precio: </span> {{habitacion.precio| currency: 'EUR'}}</p>
+        </div>
+
+    </div>
+    <h3>Reservas: </h3>
+    <div class="reservas">
+
+        @for (reserva of habitacion.reserva_habitaciones; track $index) {
+        <article class="card reserva">
+            <p><span>Fecha de entrada: </span>{{reserva.fecha_entrada}}, <span>Fecha de salida:
+                </span>{{reserva.fecha_salida}}</p>
+            <p><span>Regimen: </span>{{reserva.regimen}}, <span>desayuno: </span>{{reserva.desayuno}}</p>
+            <p><span>Servicios contratados: </span></p>
+            <ul>
+                <li>Aparcamiento: {{reserva.aparcamiento ? 'sí' : 'no'}}</li>
+                <li>Spa: {{reserva.spa ? 'sí' : 'no'}}</li>
+                <li>Gimnasio: {{reserva.gimnasio ? 'sí' : 'no'}}</li>
+                <li>Piscina: {{reserva.piscina ? 'sí' : 'no'}}</li>
+            </ul>
+            <p><span>Estado de la reserva: </span>{{reserva.estado}}</p>
+            <p class="precio"><span>Precio: </span> {{reserva.precio| currency: 'EUR'}}</p>
+            <a [routerLink]="['/dashboard/reservas/', reserva.id]">Ver reserva</a>
+        </article>
+        }
+    </div>
+
+    }
+
+    <div class="form-images">
+        <form [formGroup]="imageForm" (ngSubmit)="onSubmit()">
+            <label for="imagen" class="form-label">Añadir imágenes de la habitación</label>
+            <div class="inputs">
+                <input type="file" name="imagen" id="imagen" class="form-control" formControlName="imagen"
+                    (change)="onFileChange($event)">
+                <div class="right">
+                    <input type="submit" value="Subir imagen" class="form-control">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+.sidebar {
+    width: 250px;
+    background-color: var(--color-primario);
+    height: 100vh;
+    padding: 40px;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+figure {
+    cursor: pointer;
+}
+
+.logo {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+    background-color: white;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu span {
+    color: white;
+}

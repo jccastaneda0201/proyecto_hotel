@@ -1,0 +1,113 @@
+<div class="background">
+    <h4>¡Tu próxima experiencia inolvidable comienza aquí!</h4>
+    <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="form-column">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu nombre" formControlName="nombre" />
+                @if(checkError('nombre', 'required')) {
+                <p class="error">El nombre es requerido</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" placeholder="Ingresa tus apellidos"
+                    formControlName="apellidos" />
+                @if(checkError('apellidos', 'required')) {
+                <p class="error">Los apellidos son requeridos</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre de usuario</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu nombre de usuario"
+                    formControlName="username" />
+                @if(checkError('username', 'required')) {
+                <p class="error">El nombre de usuario es requerido</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" placeholder="Ingresa tu correo electrónico"
+                    formControlName="email" />
+                @if(checkError('email', 'pattern')){
+                <p class="error">El formato del email es incorrecto</p>
+                }
+                @if(checkError('email', 'required')){
+                <p class="error">El email es requerido</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" placeholder="Ingresa tu contraseña"
+                    formControlName="password" />
+                @if(checkError('password', 'required')) {
+                <p class="error">La contraseña es requerida</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control" placeholder="Ingresa tu fecha de nacimiento"
+                    formControlName="fecha_nacimiento" />
+                @if(checkError('fecha_nacimiento', 'required')) {
+                <p class="error">La fecha de nacimiento es requerida</p>
+                }
+            </div>
+        </div>
+        <div class="form-column">
+            <div class="mb-3">
+                <label class="form-label">DNI</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu DNI" formControlName="dni" />
+                @if(checkError('dni', 'required')) {
+                <p class="error">El DNI es requerido</p>
+                }
+                @if(checkError('dni', 'pattern')) {
+                <p class="error">El formato del DNI es incorrecto (8 dígitos y una letra)</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu teléfono" formControlName="telefono" />
+                @if(checkError('telefono', 'required')) {
+                <p class="error">El teléfono es requerido</p>
+                }
+                @if(checkError('telefono', 'pattern')) {
+                <p class="error">El formato del teléfono es incorrecto (9 dígitos)</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu dirección"
+                    formControlName="direccion" />
+                @if(checkError('direccion', 'required')) {
+                <p class="error">La dirección es requerida</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ciudad</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu ciudad" formControlName="ciudad" />
+                @if(checkError('ciudad', 'required')) {
+                <p class="error">La ciudad es requerida</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">País</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu país" formControlName="pais" />
+                @if(checkError('pais', 'required')) {
+                <p class="error">El país es requerido</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Código Postal</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu código postal"
+                    formControlName="cod_postal" />
+                @if(checkError('cod_postal', 'required')) {
+                <p class="error">El código postal es requerido</p>
+                }
+            </div>
+        </div>
+        <input type="submit" value="REGISTRARSE" class="input-con-icono">
+    </form>
+    <div class="link">
+        <a [routerLink]="['/login']">¿Ya formas parte de nuestra familia? Inicia sesión</a>
+    </div>
+</div>

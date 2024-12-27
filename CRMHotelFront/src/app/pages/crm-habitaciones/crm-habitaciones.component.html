@@ -1,0 +1,55 @@
+<div class="crmhabs">
+  <h2>Habitaciones</h2>
+  <div class="filtro">
+    <!--  <form [formGroup]="formulariofecha" (ngSubmit)="filtrarFecha()">
+            <label for="fecha-entrada">Fecha de Entrada:</label>
+            <input type="date" id="fecha-entrada" name="fecha-entrada" formControlName="fechaentrada">
+
+            <label for="fecha-salida">Fecha de Salida:</label>
+            <input type="date" id="fecha-salida" name="fecha-salida" formControlName="fechasalida">
+
+            <button type="submit">Filtrar</button>
+        </form> -->
+
+    <form class="filplanta" [formGroup]="filtroPlanta" (ngSubmit)="filtrarPlanta()">
+      <label for="piso">Piso: </label>
+      <input type="text" id="piso" name="piso" formControlName="piso" />
+
+      <button type="submit">Filtrar</button>
+    </form>
+    <form class="filcat" [formGroup]="filtrocat" (ngSubmit)="filtrarCategoria()">
+      <label for="categoria">Categoría: </label>
+      <select name="categoria" id="categoria" formControlName="categoria">
+        <option value="">Selecciona una categoría</option>
+        <option value="standard">Standard</option>
+        <option value="deluxe">Deluxe</option>
+        <option value="premium">Premium</option>
+      </select>
+
+      <button type="submit">Filtrar</button>
+    </form>
+    <form class="filubi" [formGroup]="filtroubi" (ngSubmit)="filtrarUbicacion()">
+      <label for="vista">Vista: </label>
+      <select name="vista" id="vista" formControlName="vista">
+        <option value="">Selecciona una vista</option>
+        <option value="int">Interior</option>
+        <option value="ext">Exterior</option>
+
+        <button type="submit">Filtrar</button>
+      </select>
+    </form>
+
+    <div class="create">
+      <figure [routerLink]="['new']">
+        <img src="/images/create.png" alt="" />
+      </figure>
+    </div>
+  </div>
+
+  <section class="hab-cards">
+    @for (habitacion of arrHabitaciones; track habitacion.id) {
+    <app-crmhabscard [habitacion]="habitacion" (habitacionBorrada)="onHabitacionBorrada()"></app-crmhabscard>
+
+    }
+  </section>
+</div>

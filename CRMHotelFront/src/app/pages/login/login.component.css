@@ -1,0 +1,107 @@
+.formulario {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: var(--fuente-secundaria);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h4 {
+    font-family: var(--fuente-principal);
+    font-weight: 500;
+    font-size: 60px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #e0e0e0 !important;
+    border-radius: 0;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+}
+
+.form-control:focus {
+    border-bottom: 2px solid #3c7369 !important;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: white;
+}
+
+.input-con-icono {
+    margin-top: 20px;
+    width: 60%;
+    border-radius: 0;
+    padding-right: 200px;
+    display: inline-flex;
+    align-self: center;
+    gap: 10px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    background-image: url('/images/icono_blanco.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: transparent;
+    font-weight: 500;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Se mueve hacia la derecha al hacer hover */
+.input-con-icono:hover {
+    transform: translateX(7px);
+}
+
+.background {
+    background-color: rgba(46, 89, 81, 0.4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+
+.error {
+    color: var(--color-error);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.link {
+    text-align: center;
+}
+
+.link_registro {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: var(--fuente-secundaria);
+
+}
+
+.link_registro:hover {
+    text-decoration: underline;
+}

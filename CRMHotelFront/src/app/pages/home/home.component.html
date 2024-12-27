@@ -1,0 +1,197 @@
+<section class="titulo">
+
+    <h5>UN SANTUARIO EN EL OCÉANO</h5>
+    <h1>
+        <p>Experiencias únicas</p>
+        <p>de lujo y bienestar</p>
+    </h1>
+    <p>Explora nuestras habitaciones y elige tu próxima escapada</p>
+    <div class="icono">
+        <figure> <img src="/images/icono.png" alt="icono"> </figure>
+    </div>
+</section>
+
+<section class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row">
+                <figure>
+                    <img src="/images/oasis.jpg" alt="...">
+                </figure>
+                <figure>
+                    <img src="/images/piscina_natural.jpg" alt="...">
+                </figure>
+                <figure>
+                    <img src="/images/teide.jpg" alt="...">
+                </figure>
+            </div>
+
+        </div>
+    </div>
+    <div class="carousel-item ">
+        <div class="row">
+            <figure>
+                <img src="/images/habitacion.jpg" alt="...">
+            </figure>
+            <figure>
+                <img src="/images/gruta.jpg" alt="...">
+            </figure>
+            <figure>
+                <img src="/images/chica_cafe.jpg" alt="...">
+            </figure>
+        </div>
+    </div>
+    <div class="carousel-item ">
+        <div class="row">
+            <figure>
+                <img src="/images/ciudad.jpg" alt="...">
+            </figure>
+            <figure>
+                <img src="/images/piscina2.jpg" alt="...">
+            </figure>
+            <figure>
+                <img src="/images/piscina1.jpg" alt="...">
+            </figure>
+        </div>
+    </div>
+    <!-- Cortar el float -->
+</section>
+<div style="clear: both;"></div>
+<section class="cita">
+    <p>Eira es un refugio sereno en el corazón de Tenerife, donde el lujo minimalista se fusiona con la imponente
+        belleza
+        natural de la isla.</p>
+</section>
+<section class="section-about">
+    <h2>Sumérgete En La Naturaleza, Donde Cada Rincón Te Invita a Desconectar, Relajarte y Sentirte Parte de Algo
+        Mucho Más
+        Grande.</h2>
+    <div class="about">
+        <div class="fotos">
+            <figure>
+                <img src="/images/aboutus1.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="/images/aboutus2.jpg" alt="">
+            </figure>
+        </div>
+        <div class="textoabout">
+            <p>En Eira, creemos en el poder de la simplicidad. Nuestro hotel está diseñado cuidadosamente para
+                ofrecerte un refugio
+                tranquilo, lejos del ajetreo y el bullicio de la vida diaria.</p>
+            <a [routerLink]="['nosotros']">
+                <p>QUIÉNES SOMOS</p>
+                <img src="/images/icono.png" alt="">
+            </a>
+        </div>
+    </div>
+
+</section>
+<section class="habitaciones">
+    <h2>Comodidad y Espacio a Tu Alcance</h2>
+    <div class="submenu-habitaciones">
+        <p>Cada una de nuestras habitaciones ha sido pensada para ofrecerte un ambiente tranquilo y relajante, donde el
+            diseño
+            moderno se encuentra con la belleza natural de Tenerife.</p>
+        <a [routerLink]="['habitaciones']">
+            <p>NUESTRAS HABITACIONES</p>
+            <img src="/images/icono.png" alt="">
+        </a>
+    </div>
+    <div class="carrusel-habitaciones">
+        <article>
+            <figure>
+                <img src="/images/habitacion.jpg" alt="">
+            </figure>
+        </article>
+        <article>
+            <figure>
+                <img src="/images/habitacion2.jpg" alt="">
+            </figure>
+        </article>
+        <article>
+            <figure>
+                <img src="/images/habitacion3.jpg" alt="">
+            </figure>
+        </article>
+    </div>
+</section>
+<section class="reserva">
+    <h2>Planea hoy tu escapada</h2>
+    <div class="form">
+        <form [formGroup]="reserva" (ngSubmit)="onSubmit()" class="row">
+            <div class="campo-form">
+                <label class="form-label" for="fecha">Llegada</label>
+                <input class="form-control" type="date" name="fecha" id="fecha" placeholder="Mar, 15/6/2025"
+                    formControlName="llegada">
+
+            </div>
+            <div class="campo-form">
+                <label class="form-label" for="fecha">Salida</label>
+                <input class="form-control" type="date" name="fecha" id="fecha" placeholder="Mar, 20/6/2025"
+                    formControlName="salida">
+
+            </div>
+            <div class="campo-form">
+                <label class="form-label" for="clientes">Número de clientes</label>
+                <input class="form-control" type="text" name="clientes" id="clientes" placeholder="0"
+                    formControlName="num_personas">
+
+
+            </div>
+            <input type="submit" value="RESERVAR" class="input-con-icono">
+        </form>
+    </div>
+</section>
+<section class="relax">
+    <h2>Relájate, Rejuvenece, Renueva</h2>
+    <div class="articles-relax">
+        <article class="izquierda">
+            <p>Descubre un oasis de bienestar donde cada detalle está diseñado para cuidar de ti. Nuestro spa te invita
+                a
+                disfrutar de
+                tratamientos exclusivos, vistas al océano que calman el alma y espacios pensados para desconectar del
+                mundo
+                y reconectar
+                contigo mismo.</p>
+            <div class="boton-spa">
+                <a [routerLink]="['spa']">
+                    <p>SERVICIOS DE SPA</p>
+                    <img src="/images/icono.png" alt="">
+                </a>
+            </div>
+            <figure>
+                <img src="/images/spa1.jpg" alt="">
+                <figcaption>
+                    <h3>RELÁJATE CON EL PODER DEL AGUA</h3>
+                    <p>Un espacio diseñado para relajar tu cuerpo y liberar tu mente, rodeado de la tranquilidad que
+                        solo
+                        Tenerife puede
+                        ofrecer.</p>
+                </figcaption>
+            </figure>
+        </article>
+        <article class="derecha">
+            <figure>
+                <img src="/images/esencias.jpg" alt="">
+                <figcaption>
+                    <h3>EL ARTE DEL BIENESTAR NATURAL</h3>
+                    <p>Sumérgete en una experiencia sensorial única con nuestros tratamientos personalizados. Los
+                        aceites
+                        esenciales
+                        cuidadosamente seleccionados despertarán tus sentidos y revitalizarán tu bienestar.</p>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="/images/sauna.jpg" alt="">
+                <figcaption>
+                    <h3>EL ABRAZO DE LA CALIDEZ</h3>
+                    <p>Purifica tu cuerpo y renueva tu energía en nuestra sauna. Un refugio de calor y calma donde el
+                        estrés
+                        desaparece y el
+                        relax se convierte en protagonista.</p>
+                </figcaption>
+            </figure>
+        </article>
+    </div>
+</section>

@@ -1,0 +1,85 @@
+<div class="wrapper">
+  <!-- Title Section Begin -->
+  <section class="titulo">
+    <h5>HABITACIONES</h5>
+    <h2>
+      <p>Detalles de Habitaciones</p>
+    </h2>
+  </section>
+  <!-- Title Section End -->
+
+  <!-- Rooms Section Begin -->
+  <section class="rooms-section">
+    <div class="room-contain">
+      <div class="contenido">
+        <!-- Room Item -->
+        <div class="">
+          <div class="room-item">
+            <!-- Obtener imagenes del ngOnInit -->
+            @for(ruta of rutasImagenes; track ruta) {
+            <figure>
+              <img
+                [src]="'http://localhost:3000/' + ruta"
+                alt="Imagen de la habitación {{ habitacion?.categoria }}"
+              />
+              <figcaption>Habitación {{ habitacion?.puerta }}</figcaption>
+            </figure>
+            }
+            <div class="ri-text">
+              @if (habitacion) {
+              <div class="description-text">
+                <h4>Categoria {{ habitacion.categoria }}</h4>
+                <p>
+                  <strong>Detalles: </strong
+                  >{{ getDetailForCategory(habitacion.categoria) }}
+                </p>
+                <p><strong>Numero de Piso: </strong>{{ habitacion.piso }}</p>
+                <p><strong>Tamaño: </strong> {{ habitacion.tamanho }}</p>
+                <p>
+                  <strong>Numero de Camas: </strong>{{ habitacion.num_camas }}
+                </p>
+                <p>
+                  <strong>Mascotas: </strong
+                  >{{ getMascotasStatus(habitacion.mascotas) }}
+                </p>
+                <p>
+                  <strong>Vista: </strong>{{ getVistaStatus(habitacion.vista) }}
+                </p>
+                <p>
+                  <strong>Cocina: </strong
+                  >{{ getCocinaStatus(habitacion.cocina) }}
+                </p>
+                <p class="precio">
+                  <strong>Precio: </strong>{{ habitacion.precio }} €
+                </p>
+              </div>
+
+              }@else {
+              <div class="noExiste">
+                <h2>
+                  ¡La habitación a la que estás tratando de acceder no existe !
+                </h2>
+                <i class="fi fi-rr-exclamation"></i>
+              </div>
+
+              }
+            </div>
+          </div>
+          <div class="btn-res d-flex gap-3">
+            <button
+              [routerLink]="['/habitaciones']"
+              type="submit"
+              class="btn btn-primary d-flex align-items-center gap-2"
+            >
+              Volver <i class="fi fi-rr-file-edit"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Room Item End -->
+      </div>
+    </div>
+  </section>
+  <!-- Rooms Section End -->
+</div>
+
+<!-- Rooms Section End -->

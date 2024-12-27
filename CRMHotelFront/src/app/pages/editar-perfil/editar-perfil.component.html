@@ -1,0 +1,100 @@
+<div class="background">
+    <h4>¿Quieres editar información de tu perfil?</h4>
+    <form class="formulario" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-column">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Ej: María" formControlName="nombre" />
+                @if(checkError('nombre', 'required')) {
+                <p class="error">El nombre es requerido</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" placeholder="Ej: Pérez" formControlName="apellidos" />
+                @if(checkError('apellidos', 'required')) {
+                <p class="error">Los apellidos son requeridos</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre de usuario</label>
+                <input type="text" class="form-control" placeholder="Ej: maria123" formControlName="username" />
+                @if(checkError('username', 'required')) {
+                <p class="error">El nombre de usuario es requerido</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" placeholder="Ej: nombre@gmail.com" formControlName="email" />
+                @if(checkError('email', 'pattern')){
+                <p class="error">El formato del email es incorrecto</p>
+                }
+                @if(checkError('email', 'required')){
+                <p class="error">El email es requerido</p>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control" placeholder="Ej: 01/01/1990"
+                    formControlName="fecha_nacimiento" />
+                @if(checkError('fecha_nacimiento', 'required')) {
+                <p class="error">La fecha de nacimiento es requerida</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">DNI</label>
+                <input type="text" class="form-control" placeholder="Ej: 86752439Y" formControlName="dni" />
+                @if(checkError('dni', 'required')) {
+                <p class="error">El DNI es requerido</p>
+                }
+                @if(checkError('dni', 'pattern')) {
+                <p class="error">El formato del DNI es incorrecto (8 dígitos y una letra)</p>
+                }
+            </div>
+        </div>
+        <div class="form-column">
+
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input type="text" class="form-control" placeholder="Ej: 675896456" formControlName="telefono" />
+                @if(checkError('telefono', 'required')) {
+                <p class="error">El teléfono es requerido</p>
+                }
+                @if(checkError('telefono', 'pattern')) {
+                <p class="error">El formato del teléfono es incorrecto (9 dígitos)</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" placeholder="EJ: Calle Mayor, 1" formControlName="direccion" />
+                @if(checkError('direccion', 'required')) {
+                <p class="error">La dirección es requerida</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ciudad</label>
+                <input type="text" class="form-control" placeholder="Ej: Madrid" formControlName="ciudad" />
+                @if(checkError('ciudad', 'required')) {
+                <p class="error">La ciudad es requerida</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">País</label>
+                <input type="text" class="form-control" placeholder="Ej: España" formControlName="pais" />
+                @if(checkError('pais', 'required')) {
+                <p class="error">El país es requerido</p>
+                }
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Código Postal</label>
+                <input type="text" class="form-control" placeholder="Ej: 28001" formControlName="cod_postal" />
+                @if(checkError('cod_postal', 'required')) {
+                <p class="error">El código postal es requerido</p>
+                }
+            </div>
+        </div>
+        <input type="submit" value="EDITAR PERFIL" class="input-con-icono">
+    </form>
+
+</div>

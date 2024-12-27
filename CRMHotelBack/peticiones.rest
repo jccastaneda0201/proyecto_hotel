@@ -1,0 +1,171 @@
+
+@host = http://localhost:3000/api
+@apiHabitaciones = {{host}}/habitaciones
+
+
+
+
+#######################
+#    HABITACIONES     #
+#######################
+GET {{apiHabitaciones}}
+
+###
+GET {{apiHabitaciones}}/4
+
+###
+GET {{apiHabitaciones}}/piso/2
+###
+GET {{apiHabitaciones}}/categoria/standard
+
+###
+GET {{apiHabitaciones}}/vista/int
+###
+POST {{apiHabitaciones}}
+Content-Type: application/json
+
+{
+"piso" : 3,
+"puerta" : 301,
+"mascotas":  2,
+"num_camas": "Doble",
+"categoria": "Premium",
+"precio": 470,
+"tamanho": "Mediana",
+"vista": "Interior",
+"cocina" : "Incluye"
+}
+
+
+###
+GET {{host}}/reservas/dashboard/5
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjo0LCJ1c3VhcmlvX3JvbCI6ImFkbWluIiwiaWF0IjoxNzM0MTEwNzI5fQ.xZIe0HhuVhT6-KAy3CwqXz3KGGnC1IUe8OZ18jdtVZo
+
+###
+GET {{apiHabitaciones}}/busqueda/2025-12-24/2025-12-30
+
+###
+PUT {{apiHabitaciones}}/2
+Content-Type: application/json
+
+{
+"piso" : 2,
+"puerta" : 204,
+"mascotas":  2,
+"num_camas": "Triple",
+"categoria": "Deluxe",
+"precio": 509,
+"tamanho": "Grande",
+"vista": "Exterior",
+"cocina" : "Incluye"
+}
+
+###
+DELETE {{apiHabitaciones}}/3
+
+###
+GET {{host}}/reservas
+
+###
+
+GET {{host}}/reservas/1
+
+###
+
+
+GET {{host}}/reservas/dni/77777777G
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjo0LCJ1c3VhcmlvX3JvbCI6ImFkbWluIiwiaWF0IjoxNzM0MTEwNzI5fQ.xZIe0HhuVhT6-KAy3CwqXz3KGGnC1IUe8OZ18jdtVZo
+###
+
+GET {{host}}/reservas/fecha/2024-12-18/2024-12-25
+
+###
+
+GET {{host}}/reservas
+
+###
+
+###
+GET {{host}}/reservas/misreservas
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJ1c3VhcmlvX3JvbCI6ImNsaWVudGUiLCJpYXQiOjE3MzQ1OTcxNTJ9.zrRQvdhb7m-BJUjMUhsy1DDHVTNZ74AJer61dQ7xFZM
+
+###
+
+POST {{host}}/reservas
+Content-Type: application/json
+
+{
+    "fecha_entrada": "2024-12-12",
+    "fecha_salida": "2024-12-16",
+    "puntuacion":"4" ,
+    "num_personas": "2",
+    "regimen": "Pensión Completa",
+    "tipo_cancelacion": "Sin Cancelación",
+    "aparcamiento": "true" ,
+    "desayuno":"true" ,
+    "spa": "true",
+    "gimnasio":"true" ,
+    "piscina": "true",
+    "precio": "1400",
+    "metodo_pago":"Tarjeta de crédito" ,
+    "estado": "Programada",
+    "usuarios_id": "1"
+}
+
+###
+
+PUT {{host}}/reservas/1
+Content-Type: application/json
+
+{
+    "fecha_entrada": "2024-12-11",
+    "aparcamiento": "false",
+    "precio": "1600"}
+###
+POST {{host}}/usuarios/registro
+Content-Type: application/json
+
+{
+    "nombre":"Maria Luisa",
+    "apellidos":"Hernández",
+    "fecha_nacimiento":"1990-12-12",
+    "dni":"96576437G",
+    "email":"luisa@gmail.com",
+    "password":"12345",
+    "rol":"admin",
+    "telefono":615274986,
+    "ciudad":"Madrid",
+    "pais":"España",
+    "cod_postal":28063
+
+}
+###
+GET {{host}}/usuarios/editusuario/1
+###
+GET {{host}}/usuarios/96576437G
+###
+POST {{host}}/usuarios/login
+Content-Type: application/json
+
+{
+    "email":"maruijita@gmail.com",
+    "password":"12345"
+}
+
+
+###
+POST {{host}}/habitaciones/imagenes/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjo3LCJ1c3VhcmlvX3JvbCI6ImFkbWluIiwiaWF0IjoxNzM0MzkyNjg2fQ.5CPjuToxmh8gLtHEWjjTPLsin3N07Du3JzZi7okM98g
+###
+DELETE {{host}}/habitaciones/imagenes/5
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjo3LCJ1c3VhcmlvX3JvbCI6ImFkbWluIiwiaWF0IjoxNzM0MzkyNjg2fQ.5CPjuToxmh8gLtHEWjjTPLsin3N07Du3JzZi7okM98g
+###
+GET {{host}}/usuarios/logeado
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjo3LCJ1c3VhcmlvX3JvbCI6ImFkbWluIiwiaWF0IjoxNzM0MzkyNjg2fQ.5CPjuToxmh8gLtHEWjjTPLsin3N07Du3JzZi7okM98g
+

@@ -1,0 +1,53 @@
+<section class="reserva">
+    <h2>Planea hoy tu escapada</h2>
+    <h4>DESCANSO, COMODIDAD Y EXPERIENCIAS INOLVIDABLES TE ESPERAN</h4>
+    <div class="form">
+        <form [formGroup]="busqueda" (ngSubmit)="onSubmit()" class="row">
+            <div class="campo-form">
+                <label class="form-label" for="fecha">Llegada</label>
+                <input class="form-control" type="date" name="fecha" id="fecha" placeholder="Mar, 15/6/2025"
+                    formControlName="llegada">
+            </div>
+            <div class="campo-form">
+                <label class="form-label" for="fecha">Salida</label>
+                <input class="form-control" type="date" name="fecha" id="fecha" placeholder="Mar, 20/6/2025"
+                    formControlName="salida">
+            </div>
+            <div class="campo-form">
+                <label class="form-label" for="clientes">Número de clientes</label>
+                <input class="form-control" type="text" name="clientes" id="clientes" placeholder="0"
+                    formControlName="num_personas">
+            </div>
+            <input type="submit" value="RESERVAR" class="input-con-icono buscador">
+        </form>
+    </div>
+</section>
+<h3>¡Tu escapada perfecta comienza aquí!</h3>
+<h5>
+    <p>Aquí tienes las habitaciones disponibles para las fechas seleccionadas.</p>
+    <p> Cada una ofrece un espacio único y
+        personalizado para que vivas una experiencia que se adapte a tu estilo.</p> Elige la que mejor encaje con lo que
+    buscas
+    y prepárate para disfrutar de momentos inolvidables.
+</h5>
+<div class="container">
+    @for (habitacion of arrHabitaciones; track habitacion.id) {
+    <div class="card">
+        <img src="room/room-deluxe_2.jpg" alt="Habitación Eira" class="card-image">
+
+        <div class="card-content">
+            <h1 class="card-title">Habitación {{habitacion.categoria}}</h1>
+            <h2 class="card-price">{{habitacion.precio}}€ <span>/ por noche</span></h2>
+
+            <p>
+                Cuenta con cama {{habitacion.num_camas}}
+            </p>
+            <p>
+                Vistas al {{habitacion.vista}}
+            </p>
+
+            <input value="SELECCIONAR" class="input-con-icono" (click)="guardarLocal(habitacion.id)">
+        </div>
+    </div>
+    }
+</div>

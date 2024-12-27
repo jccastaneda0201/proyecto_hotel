@@ -1,0 +1,112 @@
+<!-- Title Section Begin -->
+<section class="titulo">
+  <h5>Creacion de Habitaciones</h5>
+
+  <div class="icono">
+    <figure><img src="/images/icono.png" alt="icono" /></figure>
+  </div>
+</section>
+<!-- Title Section End -->
+
+<!-- Rooms Section Begin -->
+<section class="rooms-section">
+  <div class="room-contain">
+    <div class="contenido">
+      <!-- Room Item -->
+      <div class="col-lg-4 col-md-6">
+        <div class="room-item">
+          <img src="room/room-deluxe_3.jpg" alt="Room Image" />
+          <div class="ri-text">
+            <h2>Gestion de Habitaciones</h2>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label class="form-label">Numero de piso</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="piso"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Número de puerta</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="puerta"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Numero de mascotas</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="mascotas"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Numero de Camas</label>
+                <select class="form-control" formControlName="num_camas">
+                  <option value="">Seleccione opción</option>
+                  <option value="suit">Suit</option>
+                  <option value="triple">Triple</option>
+                  <option value="doble">Doble</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <select class="form-control" formControlName="categoria">
+                  <option value="">Seleccione opción</option>
+                  <option value="Deluxe">Deluxe</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Estandar">Estandar</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Precio</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="precio"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Tamaño</label>
+                <select class="form-control" formControlName="tamanho">
+                  <option value="">Seleccione opción</option>
+                  <option value="Grande">Grande</option>
+                  <option value="Mediana">Mediana</option>
+                  <option value="Pequeña">Pequeña</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Tipo de vista</label>
+                <select class="form-control" formControlName="vista">
+                  <option value="">Seleccione opción</option>
+                  <option value="Exterior">Exterior</option>
+                  <option value="Interior">Interior</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Cocina</label>
+                <select class="form-control" formControlName="cocina">
+                  <option value="">Seleccione opción</option>
+                  <option value="Incluye">Incluye</option>
+                  <option value="No_Incluye">No incluye</option>
+                </select>
+              </div>
+              <div class="btn-res d-flex gap-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary d-flex align-items-center gap-2"
+                >
+                  Crear <i class="fi fi-rr-file-edit"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Room Item End -->
+    </div>
+  </div>
+</section>
+<!-- Rooms Section End -->

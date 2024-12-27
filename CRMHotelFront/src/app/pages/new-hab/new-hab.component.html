@@ -1,0 +1,109 @@
+<div class="newhab">
+    <h2>Nueva Habitación</h2>
+    <h5>Introduce los datos de la nueva habitación</h5>
+    <form [formGroup]="newHabForm" (ngSubmit)="onSubmit()">
+        <div class="formflex">
+            <div class="form-column">
+                <div class="form-group">
+                    <label for="piso" class="form-label">¿En qué piso está la habitación?</label>
+                    <input class="form-control" type="text" name="piso" id="piso" formControlName="piso"
+                        placeholder="Ejemplo: 2">
+                    @if(checkError('piso', 'required')) {
+                    <p class="error">El campo piso es obligatorio</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="puerta" class="form-label">¿Qué número de puerta tiene la habitación?</label>
+                    <input class="form-control" type="text" name="puerta" id="puerta" formControlName="puerta"
+                        placeholder="Ejemplo: 206">
+                    @if(checkError('puerta', 'required')) {
+                    <p class="error">El campo puerta es obligatorio</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="num_camas" class="form-label">¿Cuántas camas tiene?</label>
+                    <select class="form-control" name="num_camas" id="num_camas" formControlName="num_camas">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Doble">Doble</option>
+                        <option value="Triple">Triple</option>
+                        <option value="Suite">Suite</option>
+                    </select>
+                    @if(checkError('num_camas', 'required')) {
+                    <p class="error">El campo número de camas es obligatorio</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="categoria" class="form-label">¿Cuál es su categoría?</label>
+                    <select class="form-control" name="categoria" id="categoria" formControlName="categoria">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                    @if(checkError('categoria', 'required')) {
+                    <p class="error">El campo categoria es obligatorio</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="tamanho" class="form-label">¿Cuál es su tamaño?</label>
+                    <select class="form-control" name="tamanho" id="tamanho" formControlName="tamanho">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Pequeña">Pequeña</option>
+                        <option value="Mediana">Mediana</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                    @if(checkError('tamanho', 'required')) {
+                    <p class="error">El campo tamaño es obligatorio</p>
+                    }
+                </div>
+
+            </div>
+            <div class="form-column">
+                <div class="form-group">
+                    <label for="vista" class="form-label">¿Cuál es su vista?</label>
+                    <select class="form-control" name="vista" id="vista" formControlName="vista">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Int">Interior</option>
+                        <option value="Ext">Exterior</option>
+                    </select>
+                    @if(checkError('vista', 'required')) {
+                    <p class="error">El campo vista es obligatorio</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="mascotas" class="form-label">¿Se permiten mascotas?</label>
+                    <select class="form-control" name="mascotas" id="mascotas" formControlName="mascotas">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                    @if(checkError('mascotas', 'required')) {
+                    <p class="error">El campo mascotas es obligatorio</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="cocina" class="form-label">¿Tiene cocina?</label>
+                    <select class="form-control" name="cocina" id="cocina" formControlName="cocina">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                    @if(checkError('cocina', 'required')) {
+                    <p class="error">El campo cocina es obligatorio</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="precio" class="form-label">¿Cuál es su precio base?</label>
+                    <input class="form-control" type="text" name="precio" id="precio" formControlName="precio"
+                        placeholder="Ejemplo: 220">
+                    @if(checkError('precio', 'required')) {
+                    <p class="error">El campo precio es obligatorio</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="btn-input">
+            <input value="CREAR NUEVA HABITACIÓN" class="input-con-icono" type="submit">
+        </div>
+    </form>
+</div>

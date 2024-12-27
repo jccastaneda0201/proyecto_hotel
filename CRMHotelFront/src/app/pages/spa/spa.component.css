@@ -1,0 +1,109 @@
+.contenedor {
+    margin: 2.5rem;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.cabecera {
+    margin: 3.75rem auto 2.5rem auto;
+    display: block;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+    h5 {
+        font-family: "Quicksand",
+            sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+
+    }
+
+    h2 {
+        margin: 20px 0 40px 0;
+        font-family: "Nympha";
+        letter-spacing: 0.0625rem;
+        font-style: normal;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #000;
+
+    }
+
+    .cabecera-p {
+        width: 100%;
+        margin: 0 auto;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        display: block;
+    }
+
+    p {
+        font-family: "Quicksand", sans-serif;
+        font-size: 1.2rem;
+        width: 40%;
+        margin: 3rem auto;
+
+
+    }
+}
+
+section {
+    display: flex;
+    gap: 2rem;
+
+    margin-top: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+
+    h3 {
+        font-family: "Nympha";
+        font-size: 2rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 20px;
+
+        letter-spacing: 1px;
+    }
+
+    .texto {
+        width: 30%;
+
+
+
+
+        p {
+            font-family: "Quicksand", sans-serif;
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+
+        }
+    }
+
+    .imagen {
+        width: 60%;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    figure {
+        width: 100%;
+    }
+}

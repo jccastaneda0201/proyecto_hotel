@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700);
+/* @import 'material-icons/iconfont/material-icons.css'; */
+
+:root {
+  --color-primario: #2e5951;
+  --color-secundario: #3c7369;
+  --color-error: #800040;
+  --fuente-principal: "Nympha", sans-serif;
+  --fuente-secundaria: "Quicksand", sans-serif;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css");
+
+@font-face {
+  font-family: "Nympha";
+  src: url(/fonts/NymphaTrial-Light.ttf) format("opentype"),
+    url(/fonts/NymphaTrial-LightItalic.ttf) format("opentype"),
+    url(/fonts/NymphaTrial-Regular.ttf) format("opentype"),
+    url(/fonts/NymphaTrial-RegularItalic.ttf) format("opentype");
+  font-weight: 400 700 500 600;
+  font-style: normal italic;
+}
+
+.fondo-login {
+  background-image: url("/images/mykola-kolya-korzh-rqObPpH7wj8-unsplash.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: rgba(15, 15, 15, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+a {
+  text-decoration: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

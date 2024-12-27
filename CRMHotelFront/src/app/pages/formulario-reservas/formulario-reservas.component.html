@@ -1,0 +1,86 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Un paso más cerca del paraíso</h2>
+    <form [formGroup]="formulario" (ngSubmit)="crearReserva()">
+        <div>
+            <label for="fecha_entrada">Fecha de Entrada</label>
+            <p>{{ busqueda.llegada}}</p>
+        </div>
+        <div>
+            <label for="fecha_salida">Fecha de Salida</label>
+            <p>{{ busqueda.salida}}</p>
+        </div>
+
+        <div>
+            <label for="num_personas">Número de Personas</label>
+            <p>{{ busqueda.num_personas}}</p>
+        </div>
+        <div>
+            <label for="regimen">Régimen</label>
+            <select id="regimen" name="regimen" formControlName="regimen">
+                <option value="">Selecciona una opción</option>
+                <option value="Solo Alojamiento">Solo alojamiento</option>
+                <option value="Desayuno">Desayuno</option>
+                <option value=" Media Pension">Media pensión</option>
+                <option value="Pension Completa">Pensión completa</option>
+                <option value="Todo Incluido">Todo incluido</option>
+            </select>
+            @if(checkError('regimen', 'required')) {
+            <p class="error">Por favor, seleccione una opción</p>
+            }
+        </div>
+        <div>
+            <label for="cancelacion">Tipo de cancelación:</label>
+            <select id="cancelacion" name="cancelacion" formControlName="tipo_cancelacion">
+                <option value="">Selecciona una opción</option>
+                <option value="24h">24 horas</option>
+                <option value="48h">48 horas</option>
+                <option value="Sin cancelación">Sin cancelación</option>
+            </select>
+            @if(checkError('tipo_cancelacion', 'required')) {
+            <p class="error">Por favor, seleccione una opción</p>
+            }
+        </div>
+        <div>
+            <label for="metodo_pago">Método de Pago</label>
+            <select id="metodo_pago" name="metodo_pago" formControlName="metodo_pago" formControlName="metodo_pago">
+                <option value="">Selecciona una opción</option>
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">MasterCard</option>
+                <option value="Paypal">PayPal</option>
+            </select>
+            @if(checkError('metodo_pago', 'required')) {
+            <p class="error">Por favor, seleccione una opción</p>
+            }
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="aparcamiento" name="aparcamiento" formControlName="aparcamiento">
+            <label for="aparcamiento">Aparcamiento</label>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" id="spa" name="spa" formControlName="spa">
+            <label for="spa">Spa</label>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" id="gimnasio" name="gimnasio" formControlName="gimnasio">
+            <label for="gimnasio">Gimnasio</label>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" id="piscina" name="piscina" formControlName="piscina">
+            <label for="piscina">Piscina</label>
+        </div>
+        <div>
+            <label for="desayuno">Desayuno</label>
+            <select id="desayuno" name="desayuno" formControlName="desayuno" formControlName="desayuno">
+                <option value="">Selecciona una opción</option>
+                <option value="Continental">Continental</option>
+                <option value="Buffet">Buffet</option>
+                <option value="Sin desayuno">Sin desayuno</option>
+            </select>
+            @if(checkError('desayuno', 'required')) {
+            <p class="error">Por favor, seleccione una opción</p>
+            }
+        </div>
+        <button type="submit">Crear Reserva</button>
+    </form>
+</div>

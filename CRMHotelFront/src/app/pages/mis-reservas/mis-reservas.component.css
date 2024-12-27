@@ -1,0 +1,70 @@
+.reservas-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 70px;
+    border-radius: 8px;
+
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: var(--fuente-principal);
+    font-size: 70px;
+    font-weight: 500;
+
+}
+
+.reservas-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.reserva-card {
+
+    border: 1px solid var(--color-secundario);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.reserva-card h2 {
+    margin-top: 0;
+    font-family: var(--fuente-principal);
+    color: var(--color-primario);
+    font-weight: 00;
+
+}
+
+.reserva-card p {
+    margin: 5px 0;
+    color: #555;
+    font-family: var(--fuente-secundaria);
+}
+
+
+span {
+    font-weight: 700;
+    color: var(--color-secundario);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-danger {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: var(--color-secundario)
+}

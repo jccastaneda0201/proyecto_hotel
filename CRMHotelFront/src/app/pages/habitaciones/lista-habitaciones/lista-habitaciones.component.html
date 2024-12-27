@@ -1,0 +1,149 @@
+<!-- Title Section Begin -->
+<section class="titulo">
+  <div class="cabecera">
+    <h2>Tu Refugio Privado</h2>
+    <h5>Descanso, lujo y naturaleza en perfecta armonía</h5>
+    <div class="cabecera-p">
+      <p>
+        Cada una de nuestras habitaciones ha sido diseñada para ofrecerte una
+        experiencia única de descanso y desconexión. Espacios amplios, elegantes
+        y llenos de luz natural donde el confort y la tranquilidad se encuentran
+        para brindarte el sueño que mereces.
+      </p>
+    </div>
+  </div>
+  <div class="icono">
+    <figure><img src="/images/icono.png" alt="icono" /></figure>
+  </div>
+</section>
+
+<section class="reserva">
+  <h2>Planea hoy tu escapada</h2>
+  <div class="form">
+    <form [formGroup]="reserva" (ngSubmit)="onSubmit()" class="row">
+      <div class="campo-form">
+        <label class="form-label" for="fecha">Llegada</label>
+        <input
+          class="form-control"
+          type="date"
+          name="fecha"
+          id="fecha"
+          placeholder="Mar, 15/6/2025"
+          formControlName="llegada"
+        />
+      </div>
+      <div class="campo-form">
+        <label class="form-label" for="fecha">Salida</label>
+        <input
+          class="form-control"
+          type="date"
+          name="fecha"
+          id="fecha"
+          placeholder="Mar, 20/6/2025"
+          formControlName="salida"
+        />
+      </div>
+      <div class="campo-form">
+        <label class="form-label" for="clientes">Número de clientes</label>
+        <input
+          class="form-control"
+          type="text"
+          name="clientes"
+          id="clientes"
+          placeholder="0"
+          formControlName="num_personas"
+        />
+      </div>
+      <input type="submit" value="RESERVAR" class="input-con-icono" />
+    </form>
+  </div>
+</section>
+
+<!-- Title Section End -->
+
+<!-- Rooms Section Begin -->
+
+<section class="rooms-section">
+  <div class="contenedor">
+    <div class="cardHabitacion">
+      <!-- Room Item -->
+      @for (habitacion of Habitacion; track habitacion.id) {
+
+      <div class="">
+        <div class="room-item">
+          <figure>
+            <img
+              [src]="'http://localhost:3000/' + getImagenPorId(habitacion.id)"
+              alt="Imagen de la habitación {{ habitacion.categoria }}"
+            />
+          </figure>
+
+          <div class="ri-text">
+            <h4>Habitación {{ habitacion.categoria }}</h4>
+            <h3>{{ habitacion.precio }}€<span> / por noche</span></h3>
+            <div class="description-text">
+              <p><strong>Tamaño: </strong> {{ habitacion.tamanho }}</p>
+              <p><strong>Camas: </strong>{{ habitacion.num_camas }}</p>
+              <div class="detalles">
+                <p>
+                  <strong>Detalles: </strong>
+                </p>
+                <p>
+                  {{ getDetailForCategory(habitacion.categoria, 16) }}
+                </p>
+                <div class="btn-read">
+                  <a
+                    href="#"
+                    class="cta"
+                    [routerLink]="['/habitaciones/', habitacion.id]"
+                  >
+                    <span>Más Detalles</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="Outline"
+                      width="13px"
+                      height="15px"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M13.1,19a1,1,0,0,1-.7-1.71L17,12.71a1,1,0,0,0,0-1.42L12.4,6.71a1,1,0,0,1,0-1.42,1,1,0,0,1,1.41,0L18.4,9.88a3,3,0,0,1,0,4.24l-4.59,4.59A1,1,0,0,1,13.1,19Z"
+                      />
+                      <path
+                        d="M6.1,19a1,1,0,0,1-.7-1.71L10.69,12,5.4,6.71a1,1,0,0,1,0-1.42,1,1,0,0,1,1.41,0l6,6a1,1,0,0,1,0,1.42l-6,6A1,1,0,0,1,6.1,19Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <p><strong>Servicios: </strong></p>
+              <div class="room-features">
+                @for (servicio of getIconsByCategory(habitacion.categoria);
+                track servicio.icon) {
+                <div class="room-info" (click)="selectIcons(servicio)">
+                  <!-- Lista de íconos -->
+                  <i [class]="servicio.icon"></i>
+                  <span>{{ servicio.label }}</span>
+                </div>
+                }
+              </div>
+
+              <!-- Icono seleccionado -->
+            </div>
+            <div class="btn-res d-flex gap-3">
+              <button
+                [routerLink]="['/login']"
+                class="btn btn-primary d-flex align-items-center gap-2"
+              >
+                RESERVAR <i class="fi fi-rs-arrow-small-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      <!-- Room Item End -->
+    </div>
+  </div>
+</section>
+
+<!-- Rooms Section End -->

@@ -1,0 +1,18 @@
+@if(habitacion) {
+<article class="hab-card">
+  <h3>Habitación {{ habitacion.puerta }}</h3>
+  <p>
+    <span>Piso: </span> {{ habitacion.piso }}, <span>Vista: </span
+    >{{ habitacion.vista }}
+  </p>
+  <p><span>Categoría: </span> {{ habitacion.categoria }}</p>
+  <p><span>Número de camas: </span> {{ habitacion.num_camas }}</p>
+  <p><span>Precio: </span> {{ habitacion.precio | currency : "EUR" }}</p>
+  <div class="btns">
+    <a [routerLink]="['detalle', habitacion.id]">Ver detalle</a>
+
+    <a [routerLink]="['edit', habitacion.id]">Editar</a>
+    <button class="delete" (click)="borrarHab()">Eliminar</button>
+  </div>
+</article>
+}.

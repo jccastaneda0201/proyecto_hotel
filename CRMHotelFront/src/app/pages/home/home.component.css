@@ -1,0 +1,437 @@
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+a {
+    color: black;
+}
+
+.titulo {
+    margin: 3.75rem auto 2.5rem auto;
+    display: block;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+    h5 {
+        font-family: "Quicksand",
+            sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 0.125rem;
+
+    }
+
+    h1 {
+        margin: 20px 0 40px 0;
+
+        p {
+            font-family: "Nympha";
+            letter-spacing: 0.0625rem;
+            font-style: normal;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+
+    }
+
+    p {
+        font-family: "Quicksand", sans-serif;
+        font-size: 1.2rem;
+
+    }
+
+    .icono {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        margin-top: 3.125rem;
+
+        figure {
+            width: 3.75rem;
+            rotate: 90deg;
+        }
+    }
+}
+
+
+.cita {
+    width: 100%;
+    padding: 3.75rem 25rem;
+    text-align: center;
+
+    p {
+        font-family: "Nympha";
+        letter-spacing: 0.0625rem;
+        font-style: normal;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #000;
+    }
+}
+
+
+
+carousel-item {
+    display: flex;
+}
+
+.row {
+    figure {
+        width: 33.3%;
+    }
+}
+
+.section-about {
+    h2 {
+        letter-spacing: 0.0625rem;
+        width: 45%;
+        font-family: "Nympha";
+        font-weight: 600;
+        font-size: 2rem;
+        margin-left: 2.5rem;
+        margin-top: 2.5rem;
+
+    }
+
+    .about {
+        display: flex;
+        margin: 2.5rem 3.125rem;
+        justify-content: space-between;
+
+
+        .fotos {
+            display: flex;
+            gap: 1rem;
+            width: 50%;
+
+            &>figure:first-child {
+                width: 50%;
+            }
+
+            &>figure:last-child {
+                width: 40%;
+            }
+        }
+    }
+
+    .textoabout {
+        width: 50%;
+        font-family: "Quicksand", sans-serif;
+
+        margin-left: 6.25rem;
+        justify-content: center;
+
+        p {
+            width: 50%;
+            font-size: 1.2rem;
+        }
+
+        a {
+            display: inline-flex;
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            margin-top: 2.5rem;
+            width: 100%;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: auto;
+            text-align: left;
+
+
+            p {
+                margin: 0rem;
+                width: 6rem;
+                font-size: 1.2rem;
+
+            }
+
+            img {
+                width: 3.75rem;
+            }
+        }
+
+        a:hover {
+            transform: translateX(7px);
+        }
+    }
+
+}
+
+.habitaciones {
+    margin-left: 2.5rem;
+    font-family: "Quicksand", sans-serif;
+
+    h2 {
+        letter-spacing: 0.0625rem;
+        width: 45%;
+        font-family: "Nympha";
+        font-weight: 600;
+        font-size: 2rem;
+        margin-top: 2.5rem;
+
+    }
+
+    .submenu-habitaciones {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+        width: 100%;
+
+        p {
+            width: 50%;
+            font-size: 1.2rem;
+        }
+
+        a {
+            display: inline-flex;
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            gap: 1.25rem;
+            text-align: left;
+
+
+            p {
+                margin: 0px;
+                width: 7.5rem;
+                font-size: 1.2rem;
+
+
+            }
+
+            img {
+                width: 3.75rem;
+            }
+        }
+
+        a:hover {
+            transform: translateX(7px);
+        }
+
+    }
+
+
+}
+
+.carrusel-habitaciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.reserva {
+    margin-top: 2rem;
+    background-color: #2e5951;
+    color: whitesmoke;
+    padding: 5rem 3rem;
+    text-align: center;
+
+    h2 {
+        letter-spacing: 0.0625rem;
+        margin-bottom: 1rem;
+        font-family: "Nympha";
+        font-weight: 600;
+        font-size: 2rem;
+
+
+    }
+
+
+    .form {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .row {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+
+            .campo-form {
+                display: grid;
+                grid-template-columns: 1fr;
+                width: 30%;
+                margin-top: 3.75rem;
+
+                .form-label {
+                    font-family: "quicksand", sans-serif;
+                    margin-bottom: 0.625rem;
+                    text-align: left;
+                }
+
+                .form-control {
+                    color: whitesmoke;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 0.0625rem solid whitesmoke;
+
+
+                }
+
+                input::placeholder {
+                    color: whitesmoke;
+                }
+
+            }
+
+        }
+    }
+
+
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.input-con-icono {
+    margin-top: 15px;
+    width: 35%;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    background-image: url('/images/icono_blanco.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: transparent;
+    font-family: var(--fuente-secundaria);
+    font-weight: 500;
+    color: white;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-con-icono:hover {
+    transform: translateX(7px);
+}
+
+.relax {
+    margin: 3rem 2.5rem;
+
+
+    p {
+        width: 80%;
+    }
+
+    h2 {
+        letter-spacing: 0.0625rem;
+        margin-bottom: 1rem;
+        font-family: "Nympha";
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    .articles-relax {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        .boton-spa {
+            margin-bottom: 2rem;
+
+            a {
+                display: inline-flex;
+                text-decoration: none;
+                background-color: transparent;
+                border: none;
+                margin-top: 2.5rem;
+                width: 100%;
+                cursor: pointer;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                width: auto;
+                text-align: left;
+
+
+                p {
+                    margin: 0rem;
+                    width: 10rem;
+                    font-size: 1.2rem;
+                    font-family: "Quicksand", sans-serif;
+
+                }
+
+                img {
+                    width: 3.75rem;
+                }
+            }
+
+            a:hover {
+                transform: translateX(7px);
+            }
+        }
+
+        figure {
+            width: 50%;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-family: "Quicksand", sans-serif;
+            width: 100%;
+            display: block;
+
+            h3 {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+
+            p {
+                width: 100%;
+            }
+        }
+
+        .izquierda {
+            width: 50%;
+
+            figure {
+                img {
+                    height: 50vh;
+                }
+            }
+
+        }
+
+        .derecha {
+            width: 50%;
+            display: flex;
+            gap: 1.3rem;
+
+            &>figure:first-child {
+                width: 50%;
+            }
+
+            &>figure:last-child {
+                width: 30%;
+            }
+        }
+    }
+}

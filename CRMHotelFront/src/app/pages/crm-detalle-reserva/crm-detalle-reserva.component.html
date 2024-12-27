@@ -1,0 +1,29 @@
+<div class="reservas-container">
+    <h2>Detalles de tu Reserva</h2>
+    @if(reserva){
+    <div class="reserva-detalle">
+        <p><strong>Fecha de Entrada:</strong> {{ reserva.fecha_entrada }}</p>
+        <p><strong>Fecha de Salida:</strong> {{ reserva.fecha_salida }}</p>
+        <p><strong>Número de Personas:</strong> {{ reserva.num_personas }}</p>
+        <p><strong>Régimen:</strong> {{ reserva.regimen }}</p>
+        <p><strong>Tipo de Cancelación:</strong> {{ reserva.tipo_cancelacion }}</p>
+        <p><strong>Aparcamiento:</strong> {{ reserva.aparcamiento ? 'Sí' : 'No' }}</p>
+        <p><strong>Desayuno:</strong> {{ reserva.desayuno ? 'Sí' : 'No' }}</p>
+        <p><strong>Spa:</strong> {{ reserva.spa ? 'Sí' : 'No' }}</p>
+        <p><strong>Gimnasio:</strong> {{ reserva.gimnasio ? 'Sí' : 'No' }}</p>
+        <p><strong>Piscina:</strong> {{ reserva.piscina ? 'Sí' : 'No' }}</p>
+        <p><strong>Precio:</strong> {{ reserva.precio }} €</p>
+        <p><strong>Método de Pago:</strong> {{ reserva.metodo_pago }}</p>
+        <p><strong>Estado:</strong> {{ reserva.estado }}</p>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+        <button class="btn btn-primary me-2" [routerLink]="['/dashboard/reservas/edit', reserva.id]">Editar
+            Reserva</button>
+        @if(reserva.tipo_cancelacion !== 'Sin cancelación') {
+        <button class="btn btn-danger" (click)="cancelarReserva()">Cancelar Reserva</button>
+        }
+    </div>
+    }@else {
+    <h2>Esta reserva NO EXISTE</h2>
+    }
+</div>
